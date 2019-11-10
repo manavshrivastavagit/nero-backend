@@ -75,7 +75,7 @@ def post_something_from_slack():
         # return jsonify(param)
         return jsonify({
             "response_type": "in_channel",
-            "text": "Hi" +text +", Hello I'm Nero!"
+            "text": detect_intent_texts("nero-sgiuhb", "1234", text, "manav", "shrivastava", "en-US" )
         })
     else:
         return jsonify({
