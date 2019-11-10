@@ -63,6 +63,23 @@ def post_something():
             "ERROR": "no name found, please send a name."
         })
 
+@app.route('/slack/hello', methods=['POST'])
+def post_something_from_slack():
+    param = request.form.get('name')
+    print(param)
+    # You can add the test cases you made in the previous function, but in our case here you are just testing the POST functionality
+    if param:
+        return jsonify({
+            "Message": "Welcome to our awesome platform!!",
+            # Add this option to distinct the POST request
+            "METHOD" : "POST"
+        })
+    else:
+        return jsonify({
+            "ERROR": "no name found, please send a name."
+        })
+
+
 @app.route('/getallemployees', methods=['GET'])
 def get_all_employee_names():
     print('Connected to Heroku')
