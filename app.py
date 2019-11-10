@@ -75,7 +75,7 @@ def post_something_from_slack():
         # return jsonify(param)
         return jsonify({
             "response_type": "in_channel",
-            "text": "Hello I'm Nero!"
+            "text": "Hi" +text +", Hello I'm Nero!"
         })
     else:
         return jsonify({
