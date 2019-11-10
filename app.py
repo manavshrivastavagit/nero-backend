@@ -67,14 +67,13 @@ def post_something():
 def post_something_from_slack():
     param = request.form
     print(param)
-    return jsonify(param)
+    # return jsonify(param)
     # You can add the test cases you made in the previous function, but in our case here you are just testing the POST functionality
     if param:
-        return jsonify(param)
+        # return jsonify(param)
         return jsonify({
-            "Message": "Welcome to our awesome platform!!",
-            # Add this option to distinct the POST request
-            "METHOD" : "POST"
+            "response_type": "in_channel",
+            "text": "Hello I'm Nero!"
         })
     else:
         return jsonify({
