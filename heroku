@@ -28,3 +28,5 @@ heroku  config:set CREDENTIALS='{
 heroku  config:set GOOGLE_APPLICATION_CREDENTIALS='NERO-95a41ac7c5b2.json' --app nero-enquero
 
 export GOOGLE_APPLICATION_CREDENTIALS='NERO-95a41ac7c5b2.json'
+
+heroku logs --app nero-backend --tail

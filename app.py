@@ -65,10 +65,12 @@ def post_something():
 
 @app.route('/slack/hello', methods=['POST'])
 def post_something_from_slack():
-    param = request.form.get('name')
+    param = request.form
     print(param)
+    return jsonify(param)
     # You can add the test cases you made in the previous function, but in our case here you are just testing the POST functionality
     if param:
+        return jsonify(param)
         return jsonify({
             "Message": "Welcome to our awesome platform!!",
             # Add this option to distinct the POST request
